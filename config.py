@@ -6,7 +6,7 @@ def get_api_key() -> str:
 
 
 def get_request_timeout() -> int:
-    raw = os.getenv("REQUEST_TIMEOUT", "5")
+    raw = os.getenv("REQUEST_TIMEOUT", "3")
     try:
         value = int(raw)
     except (TypeError, ValueError) as exc:
@@ -14,4 +14,3 @@ def get_request_timeout() -> int:
     if value <= 0:
         raise ValueError("REQUEST_TIMEOUT must be greater than zero")
     return value
-
